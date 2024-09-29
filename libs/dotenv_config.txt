@@ -1,0 +1,26 @@
+# OPENAI: https://platform.openai.com/api-keys
+OPENAI_API_KEY=xxxxxxxxxxxxxxxx
+
+# HuggingFace: https://huggingface.co/settings/tokens
+HF_TOKEN=xxxxxxxxxxxxxxxx
+HF_HUB_CACHE=models
+
+# Pinecone: https://app.pinecone.io/organizations/[organisation_id]/projects/[project_id]/keys
+PINECONE_API_KEY=xxxxxxxxxxxxxxx
+
+# Azure OpenAI
+AZURE_OPENAI_API_KEY=xxxxxxxxxxxxxxx
+AZURE_OPENAI_ENDPOINT=https://xxxxxxxxxxxxxxxxxxx.openai.azure.com
+AZURE_OPENAI_DEPLOYMENT_NAME=xxxxxxxxxxxxx
+AZURE_OPENAI_API_VERSION=2023-03-15-preview
+
+# LangSmith: https://smith.langchain.com/o/384990c6-72a3-50b2-b91f-b290b0da34d8/settings
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=xxxxxxxxxxxxxxx
+
+# Cloudflare: https://dash.cloudflare.com/profile/api-tokens
+CLOUDFLARE_ACCOUNT_ID=<YOUR_ACCOUNT_ID_VALUE>
+CLOUDFLARE_API_TOKEN=<YOUR_API_TOKEN_VALUE>
+CLOUDFLARE_EMAIL=<YOUR_EMAIL>
+WRANGLER_SEND_METRICS=true
+CLOUDFLARE_API_BASE_URL=https://api.cloudflare.com/client/v4

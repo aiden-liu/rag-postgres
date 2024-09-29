@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Python 3 & PostgreSQL",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+        "ghcr.io/devcontainers/features/git:1": {
+            "ppa": true,
+            "version": "os-provided"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts",
+            "nodeGypDependencies": true,
+            "nvmInstallPath": "/usr/local/share/nvm",
+            "nvmVersion": "latest"
+        }
+	},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8080, 80, 5432],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install python3-pip -y && git config --global core.eol lf && git config --global core.autocrlf input && git config --global user.name 'devcontainer' && git config --global user.email 'rag@al.devcontainer.com' && git config --global init.defaultBranch main && git config --global --add safe.directory /workspaces/RAG && cat libs/git_color.txt >> ~/.gitconfig && mkdir -p models && cat libs/dotenv_config.txt > .env",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"Meezilla.json",
+				"samuelcolvin.jinjahtml",
+				"redhat.vscode-yaml",
+				"hediet.vscode-drawio",
+				"ms-toolsai.jupyter",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg"
+			]
+		}
+	}
+  
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
