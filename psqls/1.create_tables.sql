@@ -16,3 +16,5 @@ CREATE TABLE IF NOT EXISTS document_chunks (
     embedding VECTOR(1536),
     FOREIGN KEY (document_id) REFERENCES documents(id) ON DELETE CASCADE
 );
+
+CREATE INDEX IF NOT EXISTS document_chunks_embedding_idx ON document_chunks USING hnsw (embedding vector_l2_ops);
