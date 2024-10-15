@@ -22,5 +22,15 @@ At the same page, see also:
 
 An example can be found [here](https://www.enterprisedb.com/blog/what-is-pgvector).
 
+To calculate the distance or similarity between two vectors, pgvector supports below operators:
+* [vector] <-> [vector]: L2 distance, or Euclidean Distance
+* [vector] <+> [vector]: L1 distance, or Manhattan Distance, or Taxicab Distance
+* [vector] <=> [vector]: cosine distance, equals (1 - cosine similariy) where cosine similariy is the cosine value of the angle between two vectors.
+* [vector] <#> [vector]: inner product, returns negative value from the normal calculation result, since Postgres only supports ASC order index scans on operators.
+
+For understanding vector distance and similarity, this [blog](https://weaviate.io/blog/distance-metrics-in-vector-search#manhattan-l1-norm-or-taxicab-distance) is pretty neat.
+
 ### Questions
 1. How to manage outdated documents?
+2. How to evaluate search results?
+3. How to tune the model, on places like embedding calculate operators, what else?

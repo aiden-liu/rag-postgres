@@ -22,5 +22,6 @@ def get_doc_embeddings(chunks: list[str]) -> list[list]:
 if __name__ == "__main__":
     from dotenv import load_dotenv, find_dotenv
     load_dotenv(find_dotenv())
-    result = generate_embeddings(client(), "In the example below we're calling the embedding model once per every item that we want to embed. When working with large embedding projects you can alternatively pass the model an array of inputs to embed rather than one input at a time. When you pass the model an array of inputs the max number of input items per call to the embedding endpoint is 2048.")
+
+    result = generate_embeddings(client(), "pgvector is a PostgreSQL extension that provides support for vector similarity search and nearest neighbor search in SQL.")
     print(result)
